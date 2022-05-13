@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1 class="mb-2">Deseja realmente deletar o cadastro?</h1>
+  <p class="lead"><strong>Nome:</strong> {{clientes.nome}}</p>
+  <p class="lead"><strong>CPF:</strong> {{clientes.cpf}}</p>
+  <p class="lead"><strong>E-mail:</strong> {{clientes.email}}</p>
+  <p class="lead"><strong>E-mail2:</strong> {{clientes.email2}}</p>
+  <p class="lead"><strong>Telefone:</strong> {{clientes.telefone}}</p>
+  <p class="lead"><strong>Telefone2:</strong> {{clientes.telefone2}}</p>
+  <p class="lead"><strong>Endereço:</strong> {{clientes.endereco}}</p>
+  <p class="lead"><strong>Data de Nascimento:</strong> {{clientes.dataNascimento}}</p>
+  <hr class="my-4">
+  <a routerLink="/cadastro" class="btn btn-primary mr-3" style="width: 100px;">Não</a>
+  <button type="button" (click)="deletarCadastro()" class="btn btn-danger" style="width: 100px;">Sim</button>
+</div>

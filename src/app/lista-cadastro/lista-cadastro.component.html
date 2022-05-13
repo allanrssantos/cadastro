@@ -1,0 +1,39 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Lista de contatos</li>
+    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/cadastro/novo">Adicionar Novo</a></li>
+  </ol>
+  </nav>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">E-mai</th>
+        <!-- <th scope="col">E-mai</th> -->
+        <th scope="col">Telefone</th>
+        <!-- <th scope="col">Telefone</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Data de Nascimento</th> -->
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of clientes">
+
+        <td>{{item.nome}}</td>
+        <td>{{item.cpf | mask:'000.000.000-00'}}</td>
+        <td>{{item.email}}</td>
+        <!-- <td>{{item.email2}}</td> -->
+        <td>{{item.telefone | mask:'(00)00000-0000'}}</td>
+        <!-- <td>{{item.telefone2}}</td>
+        <td>{{item.endereco}}</td-->
+        <td>{{item.dataNascimento | date : 'dd/MM/yyyy'}}</td>
+        <td>
+          <a [routerLink]="['', 'cadastro', item.id, 'editar']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+          <a [routerLink]="['', 'cadastro', item.id, 'deletar']" onclick="alert('Todos os dados serão apagados!')" class="btn btn-outline-danger btn-sm mr-2">Deletar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
